@@ -1,35 +1,25 @@
 package com.bauschbakeries.bauschbakeries_backend.models;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-import java.util.UUID;
-
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "Users")
-public class Users {
+@Entity(name = "Roles")
+public class User_roles {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID userId;
+    private int Id;
 
-    @Nonnull
-    private String email;
+    @OneToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private Users user;
 
-    private String username;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
-
-
+    private int roleId;
 }
