@@ -18,5 +18,6 @@ public class Admins {
 
     private String username;
 
+
     private String password;
 }

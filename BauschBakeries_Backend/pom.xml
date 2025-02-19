@@ -75,6 +75,12 @@
             <version>1.18.36</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>28.3.1</version>
+        </dependency>
+
 
     </dependencies>
 
