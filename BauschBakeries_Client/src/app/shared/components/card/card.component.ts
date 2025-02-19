@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card',
   imports: [],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+  styleUrl: './card.component.scss',
 })
-export class CardComponent {
-  @Input() title: string = 'Card Title - Replace Me';
+export class CardComponent implements OnInit {
+  @Input() title = 'Card Title - Replace Me';
 
   @Output() clicked = new EventEmitter<void>();
 

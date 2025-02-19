@@ -6,14 +6,17 @@
   <div class="ml-auto">
     <div class="inline md:hidden">
       <app-nav-button label="VOID">
-        <fa-icon [icon]='faBars' class="fa-xl"></fa-icon>
+        <fa-icon [icon]="faBars" class="fa-xl"></fa-icon>
       </app-nav-button>
     </div>
     <div class="hidden md:inline">
       <app-nav-button label="Menu"></app-nav-button>
       <app-nav-button label="Cart"></app-nav-button>
       <app-nav-button label="Account"></app-nav-button>
-      <app-nav-button [importantButton]="true" label="Place Order"></app-nav-button>
+      <app-nav-button
+        [importantButton]="true"
+        label="Place Order"
+      ></app-nav-button>
     </div>
   </div>
 </nav>

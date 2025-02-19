@@ -1,8 +1,9 @@
 <button
   class="{{
-        importantButton ? 'text-xl px-4 ml-2 bg-custom-orange rounded-full hover:cursor-pointer hover:bg-red-600 duration-200'
-        : 'text-xl mx-3 hover:cursor-pointer'
-        }}"
+    importantButton
+      ? 'text-xl px-4 ml-2 bg-custom-orange rounded-full hover:cursor-pointer hover:bg-red-600 duration-200'
+      : 'text-xl mx-3 hover:cursor-pointer'
+  }}"
   [routerLink]="routerLink"
   [disabled]="disabled"
   [type]="type"
