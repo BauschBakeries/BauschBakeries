@@ -19,7 +19,9 @@
     "module": "ES2022",
     "baseUrl": "./",
     "paths": {
-      "@Components/*": ["src/app/core/components/*"]
+      "@Components/*": ["src/app/core/components/*"],
+      "@Services/*": ["src/app/core/services/*"],
+      "@Views/*": ["src/app/core/views/*"]
     }
   },
   "angularCompilerOptions": {
