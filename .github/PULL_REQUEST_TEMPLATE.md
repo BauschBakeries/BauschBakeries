@@ -1,23 +1,9 @@
-### 📋 **Pull Request Template** – *Bausch Bakeries*  
-
-**Title:** `[Feature|Fix|Refactor|Chore] - [Short Description]`  
-
----
-
-### 🔗 **Related Issues**  
-<!-- Link the issues this PR addresses -->  
-- Closes #  
-- Fixes #  
-- Related to #  
-
----
-
-### ✨ **Description**  
+### **Description**  
 <!-- Provide a summary of the changes, explaining why they are needed and how they solve the problem. -->  
 
 ---
 
-### 🎨 **Frontend**  
+### **Frontend**  
 - [ ] UI changes included  
 - [ ] New Angular components/services added  
 - [ ] Routing updates  
@@ -27,7 +13,7 @@
 
 ---
 
-### ⚙️ **Backend**  
+### **Backend**  
 - [ ] New REST endpoints added  
 - [ ] Existing endpoints modified  
 - [ ] Security/OAuth updates  
@@ -37,7 +23,7 @@
 
 ---
 
-### ✅ **Testing**  
+### **Testing**  
 - [ ] Locally tested in dev environment  
 - [ ] Angular unit tests passing (`npm run test`)  
 - [ ] Spring Boot tests passing (`./mvnw test`)  
@@ -50,19 +36,19 @@
 
 ---
 
-### 🚀 **Deployment Notes**  
+### **Deployment Notes**  
 - [ ] Requires database migration  
 - [ ] Requires environment variable changes  
 - [ ] Requires special deployment instructions (describe below)  
 
 ---
 
-### 📚 **Additional Context/Screenshots**  
+### **Additional Context/Screenshots**  
 <!-- Add any other context, screenshots, or performance notes here -->  
 
 ---
 
-### 👀 **Reviewer Checklist**  
+### **Reviewer Checklist**  
 - [ ] Code adheres to project style guidelines  
 - [ ] No console errors  
 - [ ] Code is self-explanatory with proper comments  
