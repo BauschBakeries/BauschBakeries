@@ -1,1 +1,19 @@
 @use "tailwindcss";
+
+@font-face {
+  font-family: 'playwrite';
+  src: url('./assets/fonts/PlaywriteUSTrad-Regular.ttf') format('truetype');
+}
+
+.font-bb-playwrite {
+  font-family: 'playwrite', 'serif';
+}
+
+/* cant seem to figure out why custom tailwind colors/fonts wont work, so we are going to do our custom colors (of which there are not many), here. */
+.bg-custom-orange {
+  background-color: #E63946;
+
+  &:hover {
+    background-color: #d81226;
+  }
+}

@@ -1,5 +1,19 @@
-<nav>
-  <div>
-    BauschBakeries
+<nav class="sticky flex justify-center items-center p-4 bg-sky-950 text-white">
+  <div class="text-3xl font-bb-playwrite mr-auto">
+    <span>BauschBakeries</span>
+    <!--<span class="inline sm:hidden">B.B.</span> - may need this later for small screens, needs more testing-->
+  </div>
+  <div class="ml-auto">
+    <div class="inline md:hidden">
+      <app-nav-button label="VOID">
+        <fa-icon [icon]='faBars' class="fa-xl"></fa-icon>
+      </app-nav-button>
+    </div>
+    <div class="hidden md:inline">
+      <app-nav-button label="Menu"></app-nav-button>
+      <app-nav-button label="Cart"></app-nav-button>
+      <app-nav-button label="Account"></app-nav-button>
+      <app-nav-button [importantButton]="true" label="Place Order"></app-nav-button>
+    </div>
   </div>
 </nav>
