@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum ApiErrors {
-    API_ERROR("Some API error occured"),
+    API_ERROR("Some API error occurred"),
     CARD_ERROR("A card error happened"),
     idempotency_error("dunno what this means"),
     invalid_request_error("Invalid request");
