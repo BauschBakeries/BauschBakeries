@@ -17,6 +17,9 @@ export class NavButtonComponent {
   @Output() clicked = new EventEmitter<void>();
 
   ngOnInit() {
+    // this is here so that we can still have icon + text buttons, but also only icon buttons without the
+    // hassle of trying to import fontawesome
+    // 500 places over and over again
     if (this.label == "VOID") {
       this.label = "";
     }
