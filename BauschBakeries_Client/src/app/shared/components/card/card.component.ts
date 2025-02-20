@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   @Input() title = 'Card Title - Replace Me';
-
+  @Input() titleWidthFull: boolean = false;
   @Output() clicked = new EventEmitter<void>();
 
   ngOnInit() {}
