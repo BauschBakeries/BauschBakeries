@@ -1,16 +1,12 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
-import { ButtonComponent } from "../button/button.component";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
-  imports: [ButtonComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
-export class CardComponent implements OnInit {
+export class CardComponent  {
   @Input() title = 'Card Title - Replace Me';
-  @Input() titleWidthFull: boolean = false;
+  @Input() titleWidthFull = false;
   @Output() clicked = new EventEmitter<void>();
-
-  ngOnInit() {}
 }

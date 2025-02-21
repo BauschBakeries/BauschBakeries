@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     { id: 4, name: 'Seasonal', icon: 'faSnowflake', active: true },
   ];
 
-  iconMap: { [key: string]: any } = {
+  iconMap: Record<string, any> = {
     faCookie: faCookie,
     faBreadSlice: faBreadSlice,
     faCake: faCake,
@@ -34,6 +34,5 @@ export class HomeComponent implements OnInit {
     this.promotionalList = this.promotionalJson.map(
       (item) => new PromotionalItem(item.id, item.name, this.iconMap[item.icon], item.active)
     );
-    console.table(this.promotionalList);
   }
 }
