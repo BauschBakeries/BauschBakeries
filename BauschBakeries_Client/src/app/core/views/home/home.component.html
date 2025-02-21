@@ -20,10 +20,21 @@
     </div>
   }
 </div>
-<div class="w-1/2">
-  <app-card
+<div class="w-full md:w-1/2">
+    <app-card
     title="Currently Serviced Areas"
   >
-    <div>test text</div>
+  @for (item of serviceAreaList; track item.Id) {
+    <div class="flex items-center p-2 bg-sky-950 mt-2 rounded-sm">
+      <span class="text-2xl font-semibold">{{item.Title}} Area</span>
+      <app-button
+        class="ml-auto"
+        textSize="text-lg"
+        label="See Map"
+      >
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+      </app-button>
+    </div>
+  }
   </app-card>
 </div>

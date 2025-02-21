@@ -2,7 +2,7 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 export class PromotionalItem {
     Id: number;
-    Title: string = "";
+    Title = "";
     Icon: IconDefinition;
     IsAvailable: boolean;
 
