@@ -1,14 +1,25 @@
-<label
-  class="pt-2 text-xl font-semibold"
-  for="{{name}}"
+<div class="relative w-full">
+  <label class="pt-2 text-xl font-semibold" [for]="name">
+    {{ label }}
+  </label>
+
+  <input
+    class="p-2 text-black text-lg outline-none bg-stone-100 placeholder-black w-full mb-2 rounded-sm"
+    [type]="showPassword && type === 'password' ? 'text' : type"
+    [name]="name"
+    [id]="name"
+    [placeholder]="placeholder"
+    ngModel
+    #inputElement
+  />
+
+  <!-- Show/Hide Password Button with Icons -->
+  <button
+    *ngIf="type === 'password'"
+    type="button"
+    (click)="togglePasswordVisibility(inputElement)"
+    class="absolute right-3 top-9 text-lg text-blue-500 focus:outline-none"
   >
-  {{label}}
-</label>
-<input
-  class="p-2 text-black text-lg outline-none bg-stone-100 placeholder-black w-full mb-2 rounded-sm"
-  type="{{type}}"
-  name="{{name}}"
-  id="{{name}}"
-  placeholder="{{placeholder}}"
-  ngModel
-  >
+    <fa-icon [icon]="showPassword ? faEye : faEyeSlash"></fa-icon>
+  </button>
+</div>
