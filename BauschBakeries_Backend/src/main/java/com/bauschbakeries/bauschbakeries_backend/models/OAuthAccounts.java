@@ -1,6 +1,5 @@
 package com.bauschbakeries.bauschbakeries_backend.models;
 
-
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,18 +10,34 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "permissions")
+@Table(name = "oauth_accounts")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Permissions {
+public class OAuthAccounts {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
 
+    @ManyToOne
+    @JoinColumn(name = "UserId", nullable = false)
+    private Users UserId;
+
+    @Notnull
+    private String Provider;
+
     @Nonnull
-    private String Name;
+    private String ProviderId;
+
+    private String AvatarUrl;
+
+    private String AccessToken;
+
+    private String RefreshToken;
+
+    private LocalDateTime ExpiresAt;
 
     private LocalDateTime CreatedAt;
 
