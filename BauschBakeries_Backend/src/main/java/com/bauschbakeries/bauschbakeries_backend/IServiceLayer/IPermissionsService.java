@@ -1,13 +1,13 @@
 package com.bauschbakeries.bauschbakeries_backend.IServiceLayer;
 
-import com.bauschbakeries.bauschbakeries_backend.repositories.PermissionsRepo;
+import com.bauschbakeries.bauschbakeries_backend.repositories.PermissionsRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class IPermissionsService implements IPermissions {
-    private final PermissionsRepo permissionsRepo;
+    private final PermissionsRepository permissionsRepo;
 
-    public IPermissionsService(PermissionsRepo permissionsRepo) {
+    public IPermissionsService(PermissionsRepository permissionsRepo) {
         this.permissionsRepo = permissionsRepo;
     }
 }

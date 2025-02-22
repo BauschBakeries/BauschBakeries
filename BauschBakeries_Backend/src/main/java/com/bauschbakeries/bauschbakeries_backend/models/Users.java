@@ -14,34 +14,34 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "users")
+@Table(name="users")
 public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
+    private long id;
 
-    @Nonnull
-    private String Username;
+    @Column(nullable = false, unique = true)
+    private String username;
 
-    @Nonnull
-    private String Email;
+    @Column(nullable = false, unique = true)
+    private String email;
 
-    private LocalDateTime CreatedAt;
+    private LocalDateTime createdAt;
 
-    private LocalDateTime UpdatedAt;
+    private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "UserId", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OAuthAccounts> oauthAccounts;
 
     @PrePersist
     protected void onCreate() {
-        this.CreatedAt = LocalDateTime.now();
-        this.UpdatedAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        this.UpdatedAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 }

@@ -1,9 +1,9 @@
 package com.bauschbakeries.bauschbakeries_backend.repositories;
 
-import com.bauschbakeries.bauschbakeries_backend.models.RolePermissions;
+import com.bauschbakeries.bauschbakeries_backend.models.Permissions;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RolePermissionsRepo extends JpaRepository<RolePermissions, Long> {
+public interface PermissionsRepository extends JpaRepository<Permissions, Long> {
 }
