@@ -5,11 +5,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBreadSlice, faCake, faCookie, faSnowflake, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { PromotionalItem } from '@Models/PromotionalItem';
 import { ServiceArea } from '@Shared/models/ServiceArea';
+import { FooterComponent } from '@Components/footer/footer.component';
 
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [CardComponent, ButtonComponent, FontAwesomeModule],
+  imports: [CardComponent, ButtonComponent, FontAwesomeModule, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
