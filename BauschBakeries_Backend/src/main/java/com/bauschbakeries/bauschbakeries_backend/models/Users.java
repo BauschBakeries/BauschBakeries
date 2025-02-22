@@ -6,10 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDateTime;
-import java.util.UUID;
-
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,16 +18,29 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID userId;
+    private int Id;
 
     @Nonnull
-    private String email;
+    private String Username;
 
-    private String username;
+    @Nonnull
+    private String Email;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime CreatedAt;
 
-    private LocalDateTime updatedAt;
+    private LocalDateTime UpdatedAt;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OAuthAccounts> oauthAccounts;
 
+    @PrePersist
+    protected void onCreate() {
+        this.CreatedAt = LocalDateTime.now();
+        this.UpdatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.UpdatedAt = LocalDateTime.now();
+    }
 }
