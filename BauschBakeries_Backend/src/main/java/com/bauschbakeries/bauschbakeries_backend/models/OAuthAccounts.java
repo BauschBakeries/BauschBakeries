@@ -18,38 +18,39 @@ import java.time.LocalDateTime;
 public class OAuthAccounts {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
+    private long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private Users UserId;
+    @JoinColumn(name = "UserId", nullable = false)
+    private Users userId;
 
     @Nonnull
-    private String Provider;
+    private String provider;
 
     @Nonnull
-    private String ProviderId;
+    private String providerId;
 
-    private String AvatarUrl;
+    private String avatarUrl;
 
-    private String AccessToken;
+    private String accessToken;
 
-    private String RefreshToken;
+    private String refreshToken;
 
-    private LocalDateTime ExpiresAt;
+    private LocalDateTime expiresAt;
 
-    private LocalDateTime CreatedAt;
+    private LocalDateTime createdAt;
 
-    private LocalDateTime UpdatedAt;
+    private LocalDateTime updatedAt;
+
 
     @PrePersist
     protected void onCreate() {
-        this.CreatedAt = LocalDateTime.now();
-        this.UpdatedAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        this.UpdatedAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 }

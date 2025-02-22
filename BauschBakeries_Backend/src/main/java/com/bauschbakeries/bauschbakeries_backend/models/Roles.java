@@ -18,23 +18,23 @@ import java.time.LocalDateTime;
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
+    private long id;
 
     @Nonnull
-    private String Name;
+    private String name;
 
-    private LocalDateTime CreatedAt;
+    private LocalDateTime createdAt;
 
-    private LocalDateTime UpdatedAt;
+    private LocalDateTime updatedAt;
 
     @PrePersist
     protected void onCreate() {
-        this.CreatedAt = LocalDateTime.now();
-        this.UpdatedAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        this.UpdatedAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 }

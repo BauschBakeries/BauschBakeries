@@ -1,6 +1,5 @@
 package com.bauschbakeries.bauschbakeries_backend.models;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,25 +18,25 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
+    private long id;
 
     @Column(nullable = false, unique = true)
-    private String Username;
+    private String username;
 
     @Column(nullable = false, unique = true)
-    private String Email;
+    private String email;
 
-    private LocalDateTime CreatedAt;
+    private LocalDateTime createdAt;
 
-    private LocalDateTime UpdatedAt;
+    private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "UserId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OAuthAccounts> oauthAccounts;
 
     @PrePersist
     protected void onCreate() {
-        this.CreatedAt = LocalDateTime.now();
-        this.UpdatedAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
