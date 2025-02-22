@@ -1,8 +1,7 @@
 package com.bauschbakeries.bauschbakeries_backend.models;
 
 import jakarta.annotation.Nonnull;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,14 +15,25 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Roles {
-
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int Id;
 
     @Nonnull
-    private String name;
+    private String Name;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime CreatedAt;
 
-    private LocalDateTime updatedAt;
+    private LocalDateTime UpdatedAt;
+
+    @PrePersist
+    protected void onCreate() {
+        this.CreatedAt = LocalDateTime.now();
+        this.UpdatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.UpdatedAt = LocalDateTime.now();
+    }
 }

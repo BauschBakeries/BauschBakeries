@@ -6,32 +6,41 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.time.LocalDateTime;
-import java.util.List;
 
+import java.time.LocalDateTime;
+
+@Entity(name = "oauth_accounts")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "users")
-public class Users {
+@AllArgsConstructor
+public class OAuthAccounts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int Id;
 
-    @Nonnull
-    private String Username;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private Users UserId;
 
     @Nonnull
-    private String Email;
+    private String Provider;
+
+    @Nonnull
+    private String ProviderId;
+
+    private String AvatarUrl;
+
+    private String AccessToken;
+
+    private String RefreshToken;
+
+    private LocalDateTime ExpiresAt;
 
     private LocalDateTime CreatedAt;
 
     private LocalDateTime UpdatedAt;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<OAuthAccounts> oauthAccounts;
 
     @PrePersist
     protected void onCreate() {

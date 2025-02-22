@@ -1,37 +1,31 @@
 package com.bauschbakeries.bauschbakeries_backend.models;
 
+
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.time.LocalDateTime;
-import java.util.List;
 
+import java.time.LocalDateTime;
+
+@Entity(name = "permissions")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "users")
-public class Users {
-
+@AllArgsConstructor
+public class Permissions {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int Id;
 
     @Nonnull
-    private String Username;
-
-    @Nonnull
-    private String Email;
+    private String Name;
 
     private LocalDateTime CreatedAt;
 
     private LocalDateTime UpdatedAt;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<OAuthAccounts> oauthAccounts;
 
     @PrePersist
     protected void onCreate() {
