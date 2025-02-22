@@ -13,17 +13,18 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "users")
+@Entity
+@Table(name="users")
 public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+    private long Id;
 
-    @Nonnull
+    @Column(nullable = false, unique = true)
     private String Username;
 
-    @Nonnull
+    @Column(nullable = false, unique = true)
     private String Email;
 
     private LocalDateTime CreatedAt;

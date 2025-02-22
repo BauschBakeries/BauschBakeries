@@ -10,15 +10,16 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "permissions")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name="permissions")
 public class Permissions {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+    private long Id;
 
     @Nonnull
     private String Name;

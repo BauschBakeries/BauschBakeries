@@ -9,16 +9,16 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "oauth_accounts")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name="oauth_accounts")
 public class OAuthAccounts {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+    private long Id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

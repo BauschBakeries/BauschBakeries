@@ -9,15 +9,16 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "roles")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name="roles")
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+    private long Id;
 
     @Nonnull
     private String Name;

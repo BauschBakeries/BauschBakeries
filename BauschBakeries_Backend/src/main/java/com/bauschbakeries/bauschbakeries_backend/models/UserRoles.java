@@ -10,11 +10,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "user_roles")
+@Entity
+@Table(name="user_roles")
 public class UserRoles {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+    private long Id;
 
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false)
