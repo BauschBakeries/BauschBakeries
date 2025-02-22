@@ -1,1 +1,43 @@
-<p>home works!</p>
+<div>
+  <app-card
+    title="Deal of the Day"
+    content="VOID"
+  >
+    <div class="w-1/3 ml-auto mt-2">
+      <app-button label="Check it out!"></app-button>
+    </div>
+  </app-card>
+</div>
+<div class="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4">
+  @for (item of promotionalList; track item.Id) {
+    <div class="h-full flex-shrink-0 w-64 sm:w-auto flex flex-col">
+      <app-card title="{{ item.Title }}" content="VOID" [titleWidthFull]="true" class="h-full">
+        <div class="flex flex-col justify-center items-center mb-2 flex-grow">
+          <fa-icon [icon]="item.Icon" class="fa-5x"></fa-icon>
+        </div>
+        <app-button label="See More"></app-button>
+      </app-card>
+    </div>
+  }
+</div>
+<div class="w-full md:w-1/2">
+    <app-card
+    title="Currently Serviced Areas"
+  >
+  @for (item of serviceAreaList; track item.Id) {
+    <div class="flex items-center p-2 bg-sky-950 mt-2 rounded-sm">
+      <span class="text-2xl font-semibold">{{item.Title}} Area</span>
+      <app-button
+        class="ml-auto"
+        textSize="text-lg"
+        label="See Map"
+      >
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+      </app-button>
+    </div>
+  }
+  </app-card>
+</div>
+<div>
+  <app-footer></app-footer>
+</div>
