@@ -1,6 +1,5 @@
 package com.bauschbakeries.bauschbakeries_backend.models;
 
-
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,20 +9,20 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "Authenticated_accounts")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Auth_accounts {
-
+@Entity
+@Table(name="oauth_accounts")
+public class OAuthAccounts {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int authId;
+    private long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private Users user;
+    @JoinColumn(name = "UserId", nullable = false)
+    private Users userId;
 
     @Nonnull
     private String provider;
@@ -42,4 +41,16 @@ public class Auth_accounts {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
 }

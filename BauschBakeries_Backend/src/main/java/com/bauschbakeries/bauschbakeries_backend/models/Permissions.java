@@ -1,5 +1,6 @@
 package com.bauschbakeries.bauschbakeries_backend.models;
 
+
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,12 +11,12 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "permissions")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Roles {
+public class Permissions {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
