@@ -1,5 +1,6 @@
 package com.bauschbakeries.bauschbakeries_backend.models;
 
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

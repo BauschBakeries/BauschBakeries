@@ -9,12 +9,12 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "roles")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name="roles")
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
