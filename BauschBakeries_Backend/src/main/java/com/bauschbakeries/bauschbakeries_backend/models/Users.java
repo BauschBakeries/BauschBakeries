@@ -31,7 +31,7 @@ public class Users {
 
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "UserId", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OAuthAccounts> oauthAccounts;
 
     @PrePersist
