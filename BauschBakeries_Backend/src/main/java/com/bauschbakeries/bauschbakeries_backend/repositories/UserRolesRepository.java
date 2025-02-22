@@ -1,9 +1,9 @@
 package com.bauschbakeries.bauschbakeries_backend.repositories;
 
-import com.bauschbakeries.bauschbakeries_backend.models.Roles;
+import com.bauschbakeries.bauschbakeries_backend.models.UserRoles;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RolesRepo extends CrudRepository<Roles, Long> {
+public interface UserRolesRepository extends CrudRepository<UserRoles, Long> {
 }
