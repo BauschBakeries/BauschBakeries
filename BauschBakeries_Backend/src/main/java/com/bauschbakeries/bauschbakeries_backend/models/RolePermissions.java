@@ -15,12 +15,13 @@ public class RolePermissions {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int Id;
 
     @OneToOne
     @JoinColumn(name = "role_id", nullable = false)
-    private Roles roleId;
+    private Roles RoleId;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int permissionId;
+    @OneToOne
+    @JoinColumn(name = "permission_id", nullable = false)
+    private Permissions PermissionId;
 }
