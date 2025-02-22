@@ -16,13 +16,13 @@ public class RolePermissions {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
+    private long id;
 
     @OneToOne
     @JoinColumn(name = "role_id", nullable = false)
-    private Roles RoleId;
+    private Roles roleId;
 
     @OneToOne
     @JoinColumn(name = "permission_id", nullable = false)
-    private Permissions PermissionId;
+    private Permissions permissionId;
 }

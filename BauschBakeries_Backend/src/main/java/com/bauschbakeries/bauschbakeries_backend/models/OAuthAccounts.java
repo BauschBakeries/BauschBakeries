@@ -9,48 +9,48 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "oauth_accounts")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name="oauth_accounts")
 public class OAuthAccounts {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
+    private long id;
 
     @ManyToOne
     @JoinColumn(name = "UserId", nullable = false)
-    private Users UserId;
-
-    @Notnull
-    private String Provider;
+    private Users userId;
 
     @Nonnull
-    private String ProviderId;
+    private String provider;
 
-    private String AvatarUrl;
+    @Nonnull
+    private String providerId;
 
-    private String AccessToken;
+    private String avatarUrl;
 
-    private String RefreshToken;
+    private String accessToken;
 
-    private LocalDateTime ExpiresAt;
+    private String refreshToken;
 
-    private LocalDateTime CreatedAt;
+    private LocalDateTime expiresAt;
 
-    private LocalDateTime UpdatedAt;
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+
 
     @PrePersist
     protected void onCreate() {
-        this.CreatedAt = LocalDateTime.now();
-        this.UpdatedAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        this.UpdatedAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 }
