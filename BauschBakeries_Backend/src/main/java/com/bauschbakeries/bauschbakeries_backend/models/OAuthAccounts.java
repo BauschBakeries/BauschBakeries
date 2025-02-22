@@ -9,7 +9,8 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "oauth_accounts")
+@Entity
+@Table(name = "oauth_accounts")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,10 +22,10 @@ public class OAuthAccounts {
     private int Id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "UserId", nullable = false)
     private Users UserId;
 
-    @Nonnull
+    @Notnull
     private String Provider;
 
     @Nonnull

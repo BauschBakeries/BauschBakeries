@@ -6,7 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name = "role_permissions")
+@Entity
+@Table(name = "role_permissions")
 @Getter
 @Setter
 @NoArgsConstructor

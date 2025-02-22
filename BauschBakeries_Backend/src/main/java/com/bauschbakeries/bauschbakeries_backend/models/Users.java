@@ -13,7 +13,8 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "users")
+@Entity
+@Table(name = "users")
 public class Users {
 
     @Id
@@ -30,7 +31,7 @@ public class Users {
 
     private LocalDateTime UpdatedAt;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "UserId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OAuthAccounts> oauthAccounts;
 
     @PrePersist

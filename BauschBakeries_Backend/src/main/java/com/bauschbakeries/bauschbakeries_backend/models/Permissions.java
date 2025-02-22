@@ -10,7 +10,8 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "permissions")
+@Entity
+@Table(name = "permissions")
 @Getter
 @Setter
 @NoArgsConstructor
