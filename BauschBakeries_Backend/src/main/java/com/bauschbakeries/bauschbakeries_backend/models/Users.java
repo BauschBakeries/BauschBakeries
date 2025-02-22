@@ -41,6 +41,6 @@ public class Users {
 
     @PreUpdate
     protected void onUpdate() {
-        this.UpdatedAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 }
