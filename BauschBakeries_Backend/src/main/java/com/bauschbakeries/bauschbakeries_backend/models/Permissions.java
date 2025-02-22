@@ -1,10 +1,11 @@
 package com.bauschbakeries.bauschbakeries_backend.models;
 
+
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,16 +13,17 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "roles")
+@Entity(name = "permissions")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Roles {
+public class Permissions {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @OneToOne
+    @JoinColumn(name = "role_id", nullable = false)
+    private role_permissions rolePermissions;
 
     @Nonnull
     private String name;
