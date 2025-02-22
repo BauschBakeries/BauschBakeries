@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Auth_accounts {
+public class OAuthAccounts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

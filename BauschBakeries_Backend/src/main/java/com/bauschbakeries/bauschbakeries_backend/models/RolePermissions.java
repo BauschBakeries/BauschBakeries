@@ -6,20 +6,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity(name = "role_permissions")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "Roles")
-public class User_roles {
+@AllArgsConstructor
+public class RolePermissions {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+    private int id;
 
     @OneToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private Users user;
+    @JoinColumn(name = "role_id", nullable = false)
+    private Roles roleId;
 
-    private int roleId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int permissionId;
 }

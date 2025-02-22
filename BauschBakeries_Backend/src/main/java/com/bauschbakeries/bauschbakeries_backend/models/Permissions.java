@@ -23,7 +23,7 @@ public class Permissions {
     @Id
     @OneToOne
     @JoinColumn(name = "role_id", nullable = false)
-    private role_permissions rolePermissions;
+    private RolePermissions rolePermissions;
 
     @Nonnull
     private String name;
