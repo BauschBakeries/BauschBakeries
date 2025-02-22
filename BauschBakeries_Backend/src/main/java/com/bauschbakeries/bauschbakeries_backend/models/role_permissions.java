@@ -1,6 +1,5 @@
 package com.bauschbakeries.bauschbakeries_backend.models;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,13 +14,13 @@ import lombok.Setter;
 public class role_permissions {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @OneToOne
     @JoinColumn(name = "role_id", nullable = false)
     private Roles roleId;
 
-    @Nonnull
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int permissionId;
 }
