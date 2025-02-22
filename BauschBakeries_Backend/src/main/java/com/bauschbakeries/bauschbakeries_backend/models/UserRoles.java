@@ -15,7 +15,7 @@ import lombok.Setter;
 public class UserRoles {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+    private long Id;
 
     @OneToOne
     @JoinColumn(name = "UserId", nullable = false)

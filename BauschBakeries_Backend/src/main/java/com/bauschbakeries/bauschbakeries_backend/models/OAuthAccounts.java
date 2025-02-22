@@ -19,7 +19,7 @@ public class OAuthAccounts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+    private long Id;
 
     @ManyToOne
     @JoinColumn(name = "UserId", nullable = false)

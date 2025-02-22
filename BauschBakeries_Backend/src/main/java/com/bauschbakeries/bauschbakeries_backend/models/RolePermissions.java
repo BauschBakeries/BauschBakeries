@@ -16,7 +16,7 @@ public class RolePermissions {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+    private long Id;
 
     @OneToOne
     @JoinColumn(name = "role_id", nullable = false)
