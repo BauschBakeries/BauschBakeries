@@ -27,5 +27,9 @@ public class UsersService implements UserInterface {
         return usersRepository.findByEmail(Email);
     }
 
+    @Override
+    public Optional<Users> deleteByUsername(String Username) {
+
+    }
 
 }

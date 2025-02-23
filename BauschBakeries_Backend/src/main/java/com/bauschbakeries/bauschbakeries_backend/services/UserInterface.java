@@ -8,4 +8,6 @@ public interface UserInterface {
     Optional<Users> findByUsername(String Username);
 
     Optional<Users> findByEmail(String Email);
+
+    Optional<Users> deleteByUsername(String Username);
 }
